@@ -19,7 +19,6 @@ export default class SocketClient {
       .filter(line => !!line)
       .map(JSON.parse)
       .map(({ event, message }) => {
-        console.log({event, message})
         this.#serverListener.emit(event, message)
       })
      } catch (error) {
